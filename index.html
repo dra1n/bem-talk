@@ -37,17 +37,18 @@
 
 	<body>
 
+
 		<div class="reveal">
 
 			<!-- Any section element inside of this container is displayed as a slide -->
 			<div class="slides">
 				<section>
-					<h2>Правильная организация CSS</h2>
+					<h2>The proper organization of CSS</h2>
 				</section>
 
 				<section>
-					<h3>Часть 1.</h3>
-					<h2>Проблемы</h2>
+					<h3>Part 1.</h3>
+					<h2>The problems</h2>
 				</section>
 
 				<section>
@@ -55,47 +56,48 @@
 				</section>
 
 				<section>
-          <h3>Типичная задача</h3>
+          <h3>A typical task</h3>
           <img src="images/slider_design.png" alt="" />
 				</section>
 
 				<section>
-          <h3>Потеря контроля</h3>
+          <h3>Losing control</h3>
           <ul>
-            <li>долго вносятся изменения</li>
-            <li>исправления в одном месте ломают что-то в другом</li>
-            <li>потоянно возникает вопрос куда класть стили</li>
-            <li>возникает желание все выкинуть и переверстать заново</li>
+            <li>making changes takes long time</li>
+            <li>
+              changing code in one place breaks something somewhere else
+            </li>
+            <li>the question of where to put the styles comes up all the time</li>
+            <li>there is a desire to throw the existing markup away and re-write all from scratch</li>
           </ul>
 				</section>
 
 				<section>
-          <h3>Почему?</h3>
+          <h3>Why?</h3>
           <p class="fragment">
-            никто не знает будущего
+            Nobody knows the future
           </p>
 				</section>
 
 				<section>
-          <h3>Проблемы с CSS</h3>
+          <h3>The problems with CSS</h3>
           <ul>
-            <li class="fragment">использование глобального пространства имен</li>
-            <li class="fragment">удаление мертвого кода</li>
-            <li class="fragment">нарушение изоляции</li>
+            <li class="fragment">Using of the global namespace</li>
+            <li class="fragment">Dead code elimination</li>
+            <li class="fragment">Violation of isolation</li>
           </ul>
 				</section>
 
 				<section>
-					<h3>Часть 2.</h3>
-					<h2>Решения</h2>
+					<h3>Part 2.</h3>
+					<h2>Solutions</h2>
 				</section>
 
         <section>
-          <h3>Технологии и методологии</h3>
+          <h3>Technologies and methodologies</h3>
           <ul>
             <li><a href="https://bem.info/">BEM</a></li>
             <li><a href="https://github.com/gilbox/css-bliss">CSS Bliss</a></li>
-            <li><a href="https://github.com/css-modules/css-modules">css-modules</a></li>
             <li><a href="http://webcomponents.org/">Web Components</a></li>
             <li><a href="https://speakerdeck.com/vjeux/react-css-in-js">css in js</a></li>
             <li><a href="https://smacss.com/">SMACSS</a></li>
@@ -106,12 +108,12 @@
         </section>
 
         <section>
-          <h2>БЭМ</h2>
-          <h3><span class="fragment">Блок</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment">Элемент</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment">Модификатор</span></h3>
+          <h2>BEM</h2>
+          <h3><span class="fragment">Block</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment">Element</span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="fragment">Modifier</span></h3>
         </section>
 
         <section>
-          <h3>Пример</h3>
+          <h3>Example</h3>
 					<pre><code data-trim>
 <ul class="toolbar">
   <li class="button edit">
@@ -138,7 +140,7 @@
         </section>
 
         <section>
-          <p>... через некоторое время</p>
+          <p>... in some time</p>
 
 					<pre><code data-trim>
 <div class="user-profile">
@@ -211,35 +213,36 @@
         </section>
 
         <section>
-          <h3>Что получили</h3>
+          <h3>What we got</h3>
           <ul>
-            <li class="fragment">элементы инкапсулированы внутри блоков</li>
-            <li class="fragment">файл (или каталог) для описания блока</li>
-            <li class="fragment">прозрачная структура проекта</li>
-            <li class="fragment">самодокументируемый код</li>
-            <li class="fragment">упрощается поиск селекторов</li>
-            <li class="fragment">упрощается модификация стилей</li>
-            <li class="fragment">удаление неиспользуемого кода</li>
+            <li class="fragment">the elements are encapsulated within the block</li>
+            <li class="fragment">file (or catalog) for block description</li>
+            <li class="fragment">transparent structure of the project</li>
+            <li class="fragment">self-documenting code</li>
+            <li class="fragment">simplified selectors search</li>
+            <li class="fragment">simplified modification of styles</li>
+            <li class="fragment">removal of unused code</li>
           </ul>
         </section>
 
         <section>
-          <h3>Немного самодисциплины</h3>
+          <h3>A little self-discipline</h3>
           <ul>
-            <li>позиционирование блока задается родителем</li>
-            <li>классы, но не id</li>
-            <li>нельзя создавать элементы элементов (<code>block__elem1__elem2</code>)</li>
-            <li>в именах модификаторов и элементов всегда присутствует имя блока</li>
-            <li>нельзя создавать глобальные модификаторы</li>
-            <li>блоки могут не содержать вложенных элементов (<code>link</code>)</li>
-            <li>блоки могут заключать в себе все содержимое страницы или крупные ее части (<code>page</code>, <code>page-section</code>)</li>
+            <li>The block’s position is defined by parent</li>
+            <li>Classes but not ids</li>
+            <li>You can’t create the element of the elements (<code>block__elem1__elem2</code>)</li>
+            <li>Elements and modifiers names are always prefixed with the block name</li>
+            <li>You cannot create the global modifiers</li>
+            <li>The blocks may not contain nested elements (<code>link</code> for example)</li>
+            <li>The blocks may contain the entire content of the page and its large parts (<code>page</code>, <code>page-section</code>)</li>
           </ul>
         </section>
 
+
         <section>
-          <h3>Позиционирование блока</h3>
+          <h3>The blocks positioning</h3>
           <p>
-toolbar находится внутри блока header и должен занимать его правую половину
+Toolbar is located inside the block header and it should fill its right half
           </p>
 
           <pre><code data-trim>
@@ -267,16 +270,16 @@ toolbar находится внутри блока header и должен зан
         </section>
 
         <section>
-          <h3>В каком случае создавать блок, в каком — элемент?</h3>
+          <h3>In which case do create the block in and in which do the element?</h3>
         </section>
 
         <section>
-          <h3>Пример напоследок</h3>
+          <h3>Final example</h3>
           <img src="images/toolbar-design.png" alt="" />
         </section>
 
         <section>
-          <h3>Структура</h3>
+          <h3>Structure</h3>
 
           <pre><code data-trim>
 toolbar
@@ -296,7 +299,7 @@ toolbar
         </section>
 
         <section>
-          <h3>Разметка</h3>
+          <h3>HTML</h3>
           <pre><code data-trim style="max-height: 500px">
 <div class="toolbar">
   <div class="toolbar__item toolbar__text">
@@ -325,7 +328,7 @@ toolbar
         </section>
 
         <section>
-          <h3>Ссылки</h3>
+          <h3>Links</h3>
           <ul>
             <li><a href="https://bem.info">bem.info</a></li>
             <li><a href="https://anadea.info/ru/blog/bem-methodology">anadea.info/ru/blog/bem-methodology</a></li>
